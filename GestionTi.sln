@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionTi", "GestionTi\GestionTi.csproj", "{F166D233-16DC-490B-9B95-92DC67234B86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F166D233-16DC-490B-9B95-92DC67234B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F166D233-16DC-490B-9B95-92DC67234B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F166D233-16DC-490B-9B95-92DC67234B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F166D233-16DC-490B-9B95-92DC67234B86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A5880B0-34C3-4CB9-94FD-26A24AD9A61C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,76 @@
+﻿@model GestionTi.Models.Candidatos
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Candidatos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Cedula
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidatos_Cedula)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidatos_Nombre)
+        </dd>
+
+        <dt>
+            Apellido
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidatos_Apellido)
+        </dd>
+
+        <dt>
+            Trabajo Actual
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidatos_TrabajoActual)
+        </dd>
+
+        <dt>
+            Expectativa Salarial
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidatos_ExpectativaSalarial)
+        </dd>
+
+        <dt>
+            Observaciones
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidatos_Observaciones)
+        </dd>
+
+        <dt>
+            Fecha de nacimiento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidatos_FechaNacimiento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new {  id = Model.Candidatos_Id }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

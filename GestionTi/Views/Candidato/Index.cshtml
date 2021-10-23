@@ -1,0 +1,109 @@
+﻿@model IEnumerable<GestionTi.Models.Candidatos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+}
+
+<h2>Lista de Candidatos</h2>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Agregar", "Candidato")"><i class="glyphicon glyphicon-plus"></i>Crear Nuevo</a>
+</p>
+<table class="table" id="tablaCand">
+    <thead>
+        <tr>
+            <th>
+                Id de Candidato
+            </th>
+            <th>
+                Cedula
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                Fecha de nacimiento
+            </th>
+            <th>
+                Trabajo Actual
+            </th>
+            <th>
+                Expectativa Salarial
+            </th>
+            <th>
+                Observaciones
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatos_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatos_Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatos_Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatos_Apellido)
+            </td>
+            <td>
+                @item.Candidatos_FechaNacimiento.ToShortDateString()
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatos_TrabajoActual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatos_ExpectativaSalarial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatos_Observaciones)
+            </td>
+
+            <td>
+                <a class="btn btn-primary btn-xs" title="Editar" href="@Url.Action("Editar","Candidato", new { id = item.Candidatos_Id})">  <i class="glyphicon glyphicon-edit"></i> </a>
+                <a class="btn btn-info btn-xs" title="Detalles" href="@Url.Action("Detalles","Candidato", new { id = item.Candidatos_Id})">  <i class="glyphicon glyphicon-pencil"></i> </a>
+                <a class="cElimina btn btn-danger btn-xs" title="Detalles" href="@Url.Action("Eliminar","Candidato", new { id = item.Candidatos_Id})">  <i class="glyphicon glyphicon-trash"></i> </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+@section scripts{
+
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $('#tablaCand').DataTable({
+            "pageLength": 5,
+            lengthMenu: [5, 10, 20, 50, 100, 200, 500],
+        });
+    </script>
+
+    <script>
+        $(".cElimina").click(function (event) {
+            if (confirm("Estás seguro que deseas eliminar?") == false) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+}
+
